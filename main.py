@@ -1,10 +1,16 @@
 import streamlit as st
 import replicate
 import os
+from dotenv import load_dotenv
 from streamlit_image_comparison import image_comparison
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Fetch the Replicate API token from the environment
+REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
+
 # Set your Replicate API token
-REPLICATE_API_TOKEN = "r8_ANwfUi8CGs6vnBTy0AHJtqkF3kMrngP0x5anh"  # Replace with your actual Replicate API token
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 
 # Streamlit app
